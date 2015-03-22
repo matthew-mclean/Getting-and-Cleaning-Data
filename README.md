@@ -85,6 +85,9 @@ The inertia data in ./train/Inertial Signals and ./test/Inertial Signals is not 
 15. Now we can dcast the melted data and get the average of the features by activity and subject.This creates the wide form of the data in accordance with the tidy data principles. 
 16. Finally the final tidy data can be written out to file.
 
+**The final output data set: avg_variable_by_activity_subject.txt**
+For a detailed description of the output file, please see the related CodeBook.md.
+
 **To read the data into a data frame, run the following (assuming the file avg_variable_by_activity_subject.txt is in the working directory):**
 
  read.table("avg_variable_by_activity_subject.txt", header=TRUE, sep = ",")
