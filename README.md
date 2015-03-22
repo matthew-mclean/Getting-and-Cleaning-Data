@@ -22,15 +22,13 @@ There are two data sets we need to work with, a training set and a test set, bot
 The training data set ./train/X_train.txt consists of 7352 rows, each is an observation for a particlar subject/person and an exercise activity. Since the first variable is preceded by two spaces, use sep = 
 "" to read the data cleanly.
 The subject number is provided in the ./train/subject_train.txt file. There are 21 subjects in the training set.
-To determine the exercise activity being undertaken by the subject, two files are required, the ./train/y_train.txt - this provides a number from 1 to 6 indicating the paticular activiy for the row, and 
-./activity_labels.txt which provides the description for each of the 6 activities.
-Each column of ./train/X_train.txt makes up one of the 561 variables or "features". The feature labels are provided in ./features.txt. The "bandsEnergy" feature labels are duplicated, but since these will be 
-discarded, it is not an issue.
+To determine the exercise activity being undertaken by the subject, two files are required, the ./train/y_train.txt - this provides a number from 1 to 6 indicating the paticular activiy for the row, and ./activity_labels.txt which provides the description for each of the 6 activities - this is the label we will use for our data set.
+Each column of ./train/X_train.txt makes up one of the 561 variables or "features". The feature labels are provided in ./features.txt. The "bandsEnergy" feature labels are duplicated, but since these will be discarded, it is not an issue. These are the labels used in our data set.
 
 The test data set has the same overall structure, however the subjects are different people and there are only 9 of them.
 Consequently, the test data set in ./test/X_test.txt only has 2947 rows, which matches the number of rows in y_test.txt and subject_test.txt.
 
-In summary:
+**In summary these are the files we are interested in:**
 
 **Files in Common to both training and test data sets**
 
@@ -77,7 +75,7 @@ The inertia data in ./train/Inertial Signals and ./test/Inertial Signals is not 
 7. Now we can join the activity labels to our merged training data (it uses the only common column: activity_class)
 8. Now we repeat 5. and 7. above for the test data, first merging by column binding
 9. Then joining in the activity labels for the test data too
-10. We only need the first 4 label columns. The grep function is used to filter on just the mean and standard deviation features for test and trainings data sets
+10. We only need the first 4 label columns. The grep function is used to filter on just the mean and standard deviation features for test and trainings data sets. I chose to include all measures that have mean or standard deviation anywhere in their description.
 11. Now we merge the training and the test sets to create one data set
 12. I then check to ensure there is no missing data
 13. reshape2 is needed for melt and dcast, so this is loaded
@@ -86,7 +84,7 @@ The inertia data in ./train/Inertial Signals and ./test/Inertial Signals is not 
 16. Finally the final tidy data can be written out to file.
 
 **The final output data set: avg_variable_by_activity_subject.txt**
-For a detailed description of the output file, please see the related CodeBook.md.
+Please see the related CodeBook.md for a detailed description of the output file.
 
 **To read the data into a data frame, run the following (assuming the file avg_variable_by_activity_subject.txt is in the working directory):**
 
