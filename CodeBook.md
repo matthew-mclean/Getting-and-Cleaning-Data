@@ -21,7 +21,7 @@ The associated R script **run_analysis.R** contains all the code used to prepare
 
 The bulk of the transformation work was to stitch together the multiple data source files to produce a single data set.
 The resulting merged data set was made up of 10299 observations and 83 variables.
-The measurements are the mean and standard deviation measurements as provided in the *Human Activity Recognition Using Smartphones Data Set*
+The measurements are the mean and standard deviation measurements as provided in the *Human Activity Recognition Using Smartphones Data Set*.
 For more details about the source files and steps, please see the associated **README.md** file.
 run_analysis.R is also commented to explain what it is doing.
 
